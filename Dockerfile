@@ -6,7 +6,8 @@ WORKDIR /usr/src/todoist-clone-rest-api
 
 # Install app dependencies
 COPY package.json /usr/src/todoist-clone-rest-api
-RUN npm install
+COPY package-lock.json /usr/src/todoist-clone-rest-api
+RUN npm install --quiet
 
 # Bundle app source
 COPY . /usr/src/todoist-clone-rest-api
